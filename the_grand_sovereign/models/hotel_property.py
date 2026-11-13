@@ -15,7 +15,7 @@ class HotelProperty(models.Model):
     street = fields.Char(string='Address')
 
     def _fixed_logo(self):
-        path = Path(get_module_path('hotel_management')) / 'static' / 'src' / 'img' / 'logo.png'
+        path = Path(get_module_path('the_grand_sovereign')) / 'static' / 'src' / 'img' / 'logo.png'
         return path.read_bytes()
 
     def _sync_company_name(self):

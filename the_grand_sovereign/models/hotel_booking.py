@@ -13,7 +13,7 @@ _PRINT_LOGO_SRC = None
 def _print_logo_src():
     global _PRINT_LOGO_SRC
     if _PRINT_LOGO_SRC is None:
-        path = Path(get_module_path('hotel_management')) / 'static' / 'src' / 'img' / 'logo.png'
+        path = Path(get_module_path('the_grand_sovereign')) / 'static' / 'src' / 'img' / 'logo.png'
         encoded = base64.b64encode(path.read_bytes()).decode()
         _PRINT_LOGO_SRC = 'data:image/png;base64,' + encoded
     return _PRINT_LOGO_SRC
@@ -233,7 +233,7 @@ class HotelBooking(models.Model):
 
     def action_print_slip(self):
         return self.env.ref(
-            'hotel_management.action_report_booking_slip'
+            'the_grand_sovereign.action_report_booking_slip'
         ).report_action(self)
 
     def action_check_in(self):
